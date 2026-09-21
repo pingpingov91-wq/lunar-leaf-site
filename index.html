@@ -1,0 +1,681 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Лунный лист — чайное пространство</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Inter:wght@300;400;500&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+<!-- NAVIGATION -->
+<nav class="nav" id="nav">
+  <a href="#" class="nav-logo">Лунный лист</a>
+  <ul class="nav-links">
+    <li><a href="#teas">Чаи</a></li>
+    <li><a href="#ceremonies">Церемонии</a></li>
+    <li><a href="#mobile">Выезд</a></li>
+    <li><a href="#blog">Блог</a></li>
+    <li><a href="#about">О нас</a></li>
+    <li><a href="#contact">Контакты</a></li>
+  </ul>
+  <div class="nav-right">
+    <button class="nav-icon-btn" id="wishlistBtn" aria-label="Избранное" title="Избранное">
+      <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
+    </button>
+    <button class="nav-icon-btn cart-btn" id="cartBtn" aria-label="Корзина">
+      <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="9" cy="21" r="1"/><circle cx="20" cy="21" r="1"/><path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"/></svg>
+      <span class="cart-count" id="cartCount">0</span>
+    </button>
+    <button class="nav-icon-btn" id="authBtn" aria-label="Войти">
+      <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+    </button>
+    <button class="burger" id="burger" aria-label="Меню">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</nav>
+
+<div class="mobile-menu" id="mobileMenu">
+  <button class="mobile-menu-close" id="mobileMenuClose">✕</button>
+  <nav class="mobile-nav">
+    <a href="#teas" class="mobile-nav-link">Чаи</a>
+    <a href="#ceremonies" class="mobile-nav-link">Церемонии</a>
+    <a href="#mobile" class="mobile-nav-link">Выезд</a>
+    <a href="#blog" class="mobile-nav-link">Блог</a>
+    <a href="#about" class="mobile-nav-link">О нас</a>
+    <a href="#contact" class="mobile-nav-link">Контакты</a>
+  </nav>
+</div>
+
+<!-- HERO -->
+<section class="hero" id="hero">
+  <div class="hero-bg"></div>
+  <div class="hero-content">
+    <p class="hero-tagline">чайное пространство</p>
+    <h1 class="hero-title">Лунный<br><em>лист</em></h1>
+    <p class="hero-sub">Место, где время замедляется.<br>Редкие чаи. Живые церемонии.</p>
+    <div class="hero-actions">
+      <a href="#ceremonies" class="btn btn-light">Записаться на церемонию</a>
+      <a href="#teas" class="btn btn-outline-light">Выбрать чай</a>
+    </div>
+  </div>
+  <div class="hero-scroll">
+    <span>прокрути вниз</span>
+    <div class="hero-scroll-line"></div>
+  </div>
+</section>
+
+<!-- INTRO -->
+<section class="intro section-reveal" id="about">
+  <div class="container intro-grid">
+    <div class="intro-text">
+      <h2 class="section-title">Пространство тишины</h2>
+      <p>«Лунный лист» — это не просто место для чаепития. Это пространство, где каждый глоток — медитация, каждый чай — история из далёких провинций Юньнань и Фуцзянь.</p>
+      <p>Мы привозим редкие чаи напрямую от фермеров, проводим традиционные церемонии гун-фу чай и учим видеть красоту в простом.</p>
+      <a href="#ceremonies" class="link-arrow">Узнать о церемониях</a>
+    </div>
+    <div class="intro-image">
+      <div class="photo-frame">
+        <img src="https://images.unsplash.com/photo-1556679343-c7306c1976bc?w=600&q=80" alt="Чайная церемония" loading="lazy" />
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TEA SHOP -->
+<section class="teas section-reveal" id="teas">
+  <div class="container">
+    <div class="section-header">
+      <h2 class="section-title">Коллекция чаёв</h2>
+      <p class="section-desc">Каждый чай прошёл долгий путь, прежде чем оказаться здесь</p>
+    </div>
+    <div class="tea-filters">
+      <button class="filter-btn active" data-filter="all">Все</button>
+      <button class="filter-btn" data-filter="puer">Пуэр</button>
+      <button class="filter-btn" data-filter="oolong">Улун</button>
+      <button class="filter-btn" data-filter="white">Белый</button>
+      <button class="filter-btn" data-filter="green">Зелёный</button>
+    </div>
+    <div class="tea-grid" id="teaGrid">
+      <!-- filled by JS -->
+    </div>
+  </div>
+</section>
+
+<!-- TEA MODAL -->
+<div class="modal-overlay" id="teaModal">
+  <div class="tea-modal">
+    <button class="modal-close" id="teaModalClose">✕</button>
+    <div class="tea-modal-inner" id="teaModalContent"></div>
+  </div>
+</div>
+
+<!-- CEREMONIES -->
+<section class="ceremonies section-reveal" id="ceremonies">
+  <div class="container">
+    <div class="section-header">
+      <h2 class="section-title">Чайные церемонии</h2>
+      <p class="section-desc">Погружение в традицию — от двух часов покоя до полного дня тишины</p>
+    </div>
+    <div class="ceremony-cards">
+      <div class="ceremony-card" data-ceremony="gong-fu">
+        <div class="ceremony-img">
+          <img src="https://images.unsplash.com/photo-1563302111-eab4b145e6c9?w=500&q=80" alt="Гун-фу чай" loading="lazy" />
+        </div>
+        <div class="ceremony-info">
+          <h3>Гун-фу чай</h3>
+          <p>Традиционная китайская церемония с многократными проливами. 2 часа присутствия.</p>
+          <div class="ceremony-meta">
+            <span>от 1 500 ₽</span>
+            <span>1–6 чел.</span>
+          </div>
+          <button class="btn btn-dark" onclick="openBooking('Гун-фу чай', 1500)">Забронировать</button>
+        </div>
+      </div>
+      <div class="ceremony-card" data-ceremony="meditation">
+        <div class="ceremony-img">
+          <img src="https://images.unsplash.com/photo-1544787219-7f47ccb76574?w=500&q=80" alt="Медитативная церемония" loading="lazy" />
+        </div>
+        <div class="ceremony-info">
+          <h3>Медитативная</h3>
+          <p>Тишина, звуки природы, особый пуэр. Час полного присутствия для одного или двоих.</p>
+          <div class="ceremony-meta">
+            <span>от 2 000 ₽</span>
+            <span>1–2 чел.</span>
+          </div>
+          <button class="btn btn-dark" onclick="openBooking('Медитативная церемония', 2000)">Забронировать</button>
+        </div>
+      </div>
+      <div class="ceremony-card" data-ceremony="group">
+        <div class="ceremony-img">
+          <img src="https://images.unsplash.com/photo-1516594798947-e65505dbb29d?w=500&q=80" alt="Групповая церемония" loading="lazy" />
+        </div>
+        <div class="ceremony-info">
+          <h3>Групповая</h3>
+          <p>Совместное чаепитие с историей. Идеально для компании друзей или корпоративного события.</p>
+          <div class="ceremony-meta">
+            <span>от 800 ₽/чел.</span>
+            <span>6–20 чел.</span>
+          </div>
+          <button class="btn btn-dark" onclick="openBooking('Групповая церемония', 800)">Забронировать</button>
+        </div>
+      </div>
+      <div class="ceremony-card" data-ceremony="day">
+        <div class="ceremony-img">
+          <img src="https://images.unsplash.com/photo-1597318181409-cf64d0b5d8a2?w=500&q=80" alt="День чая" loading="lazy" />
+        </div>
+        <div class="ceremony-info">
+          <h3>День чая</h3>
+          <p>Полное погружение: история, несколько церемоний, обед в чайном пространстве. 5–6 часов.</p>
+          <div class="ceremony-meta">
+            <span>от 4 500 ₽</span>
+            <span>1–8 чел.</span>
+          </div>
+          <button class="btn btn-dark" onclick="openBooking('День чая', 4500)">Забронировать</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- BOOKING MODAL -->
+<div class="modal-overlay" id="bookingModal">
+  <div class="booking-modal">
+    <button class="modal-close" id="bookingModalClose">✕</button>
+    <h3 class="modal-title">Бронирование</h3>
+    <form class="booking-form" id="bookingForm" novalidate>
+      <div class="form-group">
+        <label>Тип церемонии</label>
+        <select name="ceremony" id="bookingCeremonySelect">
+          <option value="Гун-фу чай">Гун-фу чай — от 1 500 ₽</option>
+          <option value="Медитативная церемония">Медитативная — от 2 000 ₽</option>
+          <option value="Групповая церемония">Групповая — от 800 ₽/чел.</option>
+          <option value="День чая">День чая — от 4 500 ₽</option>
+        </select>
+      </div>
+      <div class="form-row">
+        <div class="form-group">
+          <label>Количество человек</label>
+          <select name="guests" id="bookingGuests">
+            <option value="1">1 человек</option>
+            <option value="2">2 человека</option>
+            <option value="3">3 человека</option>
+            <option value="4">4 человека</option>
+            <option value="5">5 человек</option>
+            <option value="6">6 человек</option>
+            <option value="8">8 человек</option>
+            <option value="10">10 человек</option>
+            <option value="15">15 человек</option>
+            <option value="20">20 человек</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label>Дата</label>
+          <input type="date" name="date" id="bookingDate" required />
+        </div>
+      </div>
+      <div class="form-group">
+        <label>Время</label>
+        <div class="time-grid">
+          <label class="time-option"><input type="radio" name="time" value="10:00" /> 10:00</label>
+          <label class="time-option"><input type="radio" name="time" value="12:00" /> 12:00</label>
+          <label class="time-option"><input type="radio" name="time" value="14:00" /> 14:00</label>
+          <label class="time-option"><input type="radio" name="time" value="16:00" checked /> 16:00</label>
+          <label class="time-option"><input type="radio" name="time" value="18:00" /> 18:00</label>
+          <label class="time-option"><input type="radio" name="time" value="20:00" /> 20:00</label>
+        </div>
+      </div>
+      <div class="form-row">
+        <div class="form-group">
+          <label>Ваше имя</label>
+          <input type="text" name="name" placeholder="Имя" required />
+        </div>
+        <div class="form-group">
+          <label>Телефон</label>
+          <input type="tel" name="phone" placeholder="+7 (___) ___-__-__" required />
+        </div>
+      </div>
+      <div class="form-group">
+        <label>Пожелание</label>
+        <textarea name="wish" placeholder="Особые пожелания, вопросы..." rows="3"></textarea>
+      </div>
+      <div class="booking-total">
+        <span>Итоговая стоимость:</span>
+        <strong id="bookingTotalPrice">—</strong>
+      </div>
+      <button type="submit" class="btn btn-dark btn-full">Подтвердить бронирование</button>
+    </form>
+  </div>
+</div>
+
+<!-- SUCCESS MODAL -->
+<div class="modal-overlay" id="successModal">
+  <div class="success-modal">
+    <div class="success-icon">
+      <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+    </div>
+    <h3>Заявка принята</h3>
+    <p>Мы свяжемся с вами для подтверждения в течение часа.</p>
+    <button class="btn btn-dark" id="successClose">Закрыть</button>
+  </div>
+</div>
+
+<!-- ORDER SUCCESS MODAL -->
+<div class="modal-overlay" id="orderSuccessModal">
+  <div class="success-modal">
+    <div class="success-icon">
+      <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+    </div>
+    <h3>Заказ оформлен</h3>
+    <p id="orderNumber">Номер вашего заказа: <strong>#00001</strong></p>
+    <p>Мы свяжемся с вами для подтверждения.</p>
+    <button class="btn btn-dark" id="orderSuccessClose">Закрыть</button>
+  </div>
+</div>
+
+<!-- MOBILE CEREMONY -->
+<section class="mobile-ceremony section-reveal" id="mobile">
+  <div class="container">
+    <div class="mobile-ceremony-grid">
+      <div class="mobile-ceremony-text">
+        <h2 class="section-title">Чайная церемония<br><em>может приехать к тебе</em></h2>
+        <p>Привозим полную сервировку — гайвань, чабань, посуду, воду и чай. Создаём атмосферу прямо у тебя дома, на природе или на мероприятии.</p>
+        <div class="mobile-details">
+          <div class="mobile-detail">
+            <span class="detail-label">Как проходит</span>
+            <p>Мастер чая приезжает с полным набором для церемонии. Готовит пространство, проводит церемонию и рассказывает историю каждого чая.</p>
+          </div>
+          <div class="mobile-detail">
+            <span class="detail-label">Что привозим</span>
+            <p>Гайвань, чабань, пиалы, два сорта чая на выбор, фильтрованную воду, аромапалочки.</p>
+          </div>
+          <div class="mobile-detail">
+            <span class="detail-label">Длительность</span>
+            <p>от 1,5 до 4 часов — по договорённости</p>
+          </div>
+          <div class="mobile-detail">
+            <span class="detail-label">Участники</span>
+            <p>от 2 до 25 человек</p>
+          </div>
+          <div class="mobile-detail">
+            <span class="detail-label">Стоимость</span>
+            <p>от 5 000 ₽ + выезд по Москве</p>
+          </div>
+        </div>
+        <button class="btn btn-dark" onclick="openBooking('Выездная церемония', 5000)">Заказать выезд</button>
+      </div>
+      <div class="mobile-ceremony-photos">
+        <div class="photo-collage">
+          <img src="https://images.unsplash.com/photo-1544787219-7f47ccb76574?w=400&q=80" alt="Выезд домой" loading="lazy" class="collage-1" />
+          <img src="https://images.unsplash.com/photo-1521483451569-e33803c0330c?w=400&q=80" alt="Выезд на природу" loading="lazy" class="collage-2" />
+          <img src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=400&q=80" alt="Корпоративное мероприятие" loading="lazy" class="collage-3" />
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TEA JOURNEY -->
+<section class="journey section-reveal" id="journey">
+  <div class="container">
+    <div class="section-header">
+      <h2 class="section-title">Путь чайного листа</h2>
+      <p class="section-desc">От горных склонов Юньнань до вашей чаши</p>
+    </div>
+  </div>
+  <div class="journey-timeline" id="journeyTimeline">
+    <div class="journey-step" data-step="0">
+      <div class="journey-img">
+        <img src="https://images.unsplash.com/photo-1556679343-c7306c1976bc?w=500&q=80" alt="Китай" loading="lazy" />
+      </div>
+      <div class="journey-content">
+        <span class="journey-place">Провинция Юньнань, Китай</span>
+        <h3>Родина чая</h3>
+        <p>Горные плантации на высоте 1500–2000 метров. Здесь растут дикорастущие чайные деревья возрастом от 50 до 500 лет — именно их листья дают самые глубокие вкусы.</p>
+      </div>
+    </div>
+    <div class="journey-step" data-step="1">
+      <div class="journey-img">
+        <img src="https://images.unsplash.com/photo-1587734195503-904fca47e0e9?w=500&q=80" alt="Выращивание" loading="lazy" />
+      </div>
+      <div class="journey-content">
+        <span class="journey-place">Выращивание</span>
+        <h3>Без вмешательства</h3>
+        <p>Дикорастущие деревья не требуют ухода. Они растут в экосистеме леса, впитывая минералы горных почв и туман ранних утр.</p>
+      </div>
+    </div>
+    <div class="journey-step" data-step="2">
+      <div class="journey-img">
+        <img src="https://images.unsplash.com/photo-1567922045116-2a00fae2ed03?w=500&q=80" alt="Сбор" loading="lazy" />
+      </div>
+      <div class="journey-content">
+        <span class="journey-place">Сбор</span>
+        <h3>Только вручную</h3>
+        <p>Весенний сбор — самый ценный. Фермеры собирают только флаши: нераскрывшийся лист с двумя молодыми листочками. Один человек собирает за день 4–6 кг.</p>
+      </div>
+    </div>
+    <div class="journey-step" data-step="3">
+      <div class="journey-img">
+        <img src="https://images.unsplash.com/photo-1563302111-eab4b145e6c9?w=500&q=80" alt="Обработка" loading="lazy" />
+      </div>
+      <div class="journey-content">
+        <span class="journey-place">Обработка</span>
+        <h3>Дыхание листа</h3>
+        <p>Листья вялят на солнце, затем прожаривают в котле и скручивают. Для пуэра — прессуют в блины и оставляют зреть. Каждый шаг формирует вкус.</p>
+      </div>
+    </div>
+    <div class="journey-step" data-step="4">
+      <div class="journey-img">
+        <img src="https://images.unsplash.com/photo-1597318181409-cf64d0b5d8a2?w=500&q=80" alt="Выдержка" loading="lazy" />
+      </div>
+      <div class="journey-content">
+        <span class="journey-place">Выдержка</span>
+        <h3>Время как ингредиент</h3>
+        <p>Шэн пуэр выдерживают от 3 до 30+ лет. С каждым годом чай становится мягче, глубже, сложнее. Хороший выдержанный пуэр — как хорошее вино.</p>
+      </div>
+    </div>
+    <div class="journey-step" data-step="5">
+      <div class="journey-img">
+        <img src="https://images.unsplash.com/photo-1544787219-7f47ccb76574?w=500&q=80" alt="Церемония" loading="lazy" />
+      </div>
+      <div class="journey-content">
+        <span class="journey-place">Лунный лист</span>
+        <h3>Чайная церемония</h3>
+        <p>В конце долгого пути — чаша чая. Горячая вода раскрывает всё: горы, туман, время, труд фермера. Это и есть гун-фу чай — искусство присутствия.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- BLOG -->
+<section class="blog section-reveal" id="blog">
+  <div class="container">
+    <div class="section-header">
+      <h2 class="section-title">Чайные истории</h2>
+      <p class="section-desc">Читать о чае почти так же хорошо, как пить его</p>
+    </div>
+    <div class="blog-grid">
+      <article class="blog-card blog-card-featured">
+        <a href="article-puer-brewing.html" class="blog-card-link">
+          <div class="blog-card-img">
+            <img src="https://images.unsplash.com/photo-1587049352846-4a222e784d38?w=700&q=80" alt="Как заваривать пуэр" loading="lazy" />
+          </div>
+          <div class="blog-card-body">
+            <span class="blog-tag">Мастерство</span>
+            <h3>Как правильно заваривать пуэр</h3>
+            <p>Температура воды, объём гайвани, количество листа и скорость первого пролива — разбираем каждую деталь.</p>
+            <span class="blog-meta">8 минут чтения</span>
+          </div>
+        </a>
+      </article>
+      <article class="blog-card">
+        <a href="article-shu-vs-shen.html" class="blog-card-link">
+          <div class="blog-card-img">
+            <img src="https://images.unsplash.com/photo-1556679343-c7306c1976bc?w=400&q=80" alt="Шу и шэн" loading="lazy" />
+          </div>
+          <div class="blog-card-body">
+            <span class="blog-tag">Знания</span>
+            <h3>Чем шу пуэр отличается от шэн пуэра</h3>
+            <p>Два чая с одинаковым именем и совершенно разной судьбой.</p>
+            <span class="blog-meta">5 минут чтения</span>
+          </div>
+        </a>
+      </article>
+      <article class="blog-card">
+        <div class="blog-card-img">
+          <img src="https://images.unsplash.com/photo-1563302111-eab4b145e6c9?w=400&q=80" alt="Проливы" loading="lazy" />
+        </div>
+        <div class="blog-card-body">
+          <span class="blog-tag">Традиция</span>
+          <h3>Почему чай заваривают проливами</h3>
+          <p>Логика многократного заваривания: зачем нам нужен второй, третий и двенадцатый пролив.</p>
+          <span class="blog-meta">4 минуты чтения</span>
+        </div>
+      </article>
+      <article class="blog-card">
+        <div class="blog-card-img">
+          <img src="https://images.unsplash.com/photo-1544787219-7f47ccb76574?w=400&q=80" alt="Подарок" loading="lazy" />
+        </div>
+        <div class="blog-card-body">
+          <span class="blog-tag">Практика</span>
+          <h3>Как выбрать чай в подарок</h3>
+          <p>Три вопроса, которые нужно задать себе, и пять чаёв, которые всегда рады получить.</p>
+          <span class="blog-meta">3 минуты чтения</span>
+        </div>
+      </article>
+      <article class="blog-card">
+        <div class="blog-card-img">
+          <img src="https://images.unsplash.com/photo-1587734195503-904fca47e0e9?w=400&q=80" alt="История церемонии" loading="lazy" />
+        </div>
+        <div class="blog-card-body">
+          <span class="blog-tag">История</span>
+          <h3>История чайной церемонии</h3>
+          <p>От буддийских монастырей Танской эпохи до современных чайных клубов — 1300 лет традиции.</p>
+          <span class="blog-meta">7 минут чтения</span>
+        </div>
+      </article>
+      <article class="blog-card">
+        <div class="blog-card-img">
+          <img src="https://images.unsplash.com/photo-1597318181409-cf64d0b5d8a2?w=400&q=80" alt="Ошибки новичка" loading="lazy" />
+        </div>
+        <div class="blog-card-body">
+          <span class="blog-tag">Советы</span>
+          <h3>7 ошибок новичка</h3>
+          <p>Кипящая вода, мало листа, спешка при настаивании и другие вещи, которые мешают получить хороший вкус.</p>
+          <span class="blog-meta">5 минут чтения</span>
+        </div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- WISHLIST / FAVORITES -->
+<div class="modal-overlay" id="wishlistModal">
+  <div class="wishlist-modal">
+    <button class="modal-close" id="wishlistModalClose">✕</button>
+    <h3 class="modal-title">Моя коллекция</h3>
+    <div class="wishlist-grid" id="wishlistGrid">
+      <p class="empty-state">Пока здесь пусто.<br>Добавляйте чаи, нажимая на сердечко.</p>
+    </div>
+  </div>
+</div>
+
+<!-- CART -->
+<div class="modal-overlay" id="cartModal">
+  <div class="cart-modal">
+    <button class="modal-close" id="cartModalClose">✕</button>
+    <h3 class="modal-title">Корзина</h3>
+    <div class="cart-items" id="cartItems">
+      <p class="empty-state">Корзина пуста</p>
+    </div>
+    <div class="cart-footer" id="cartFooter" style="display:none">
+      <div class="cart-total">
+        <span>Итого:</span>
+        <strong id="cartTotal">0 ₽</strong>
+      </div>
+      <button class="btn btn-dark btn-full" id="checkoutBtn">Оформить заказ</button>
+    </div>
+  </div>
+</div>
+
+<!-- CHECKOUT -->
+<div class="modal-overlay" id="checkoutModal">
+  <div class="checkout-modal">
+    <button class="modal-close" id="checkoutModalClose">✕</button>
+    <h3 class="modal-title">Оформление заказа</h3>
+    <form class="checkout-form" id="checkoutForm" novalidate>
+      <div class="form-row">
+        <div class="form-group">
+          <label>Имя</label>
+          <input type="text" name="name" placeholder="Ваше имя" required />
+        </div>
+        <div class="form-group">
+          <label>Телефон</label>
+          <input type="tel" name="phone" placeholder="+7 (___) ___-__-__" required />
+        </div>
+      </div>
+      <div class="form-group">
+        <label>Город</label>
+        <input type="text" name="city" placeholder="Город" required />
+      </div>
+      <div class="form-group">
+        <label>Способ получения</label>
+        <div class="delivery-options">
+          <label class="delivery-option">
+            <input type="radio" name="delivery" value="delivery" checked />
+            <span>Доставка</span>
+          </label>
+          <label class="delivery-option">
+            <input type="radio" name="delivery" value="pickup" />
+            <span>Самовывоз</span>
+          </label>
+        </div>
+      </div>
+      <div class="form-group" id="addressGroup">
+        <label>Адрес доставки</label>
+        <input type="text" name="address" placeholder="Улица, дом, квартира" />
+      </div>
+      <div class="form-group">
+        <label>Комментарий</label>
+        <textarea name="comment" placeholder="Пожелания к заказу..." rows="3"></textarea>
+      </div>
+      <button type="submit" class="btn btn-dark btn-full">Подтвердить заказ</button>
+    </form>
+  </div>
+</div>
+
+<!-- AUTH MODAL -->
+<div class="modal-overlay" id="authModal">
+  <div class="auth-modal">
+    <button class="modal-close" id="authModalClose">✕</button>
+    <div class="auth-tabs">
+      <button class="auth-tab active" data-tab="login">Войти</button>
+      <button class="auth-tab" data-tab="register">Регистрация</button>
+    </div>
+    <form class="auth-form" id="loginForm">
+      <div class="form-group">
+        <label>Email</label>
+        <input type="email" placeholder="email@example.com" required />
+      </div>
+      <div class="form-group">
+        <label>Пароль</label>
+        <input type="password" placeholder="••••••••" required />
+      </div>
+      <button type="submit" class="btn btn-dark btn-full">Войти</button>
+    </form>
+    <form class="auth-form" id="registerForm" style="display:none">
+      <div class="form-group">
+        <label>Имя</label>
+        <input type="text" placeholder="Ваше имя" required />
+      </div>
+      <div class="form-group">
+        <label>Email</label>
+        <input type="email" placeholder="email@example.com" required />
+      </div>
+      <div class="form-group">
+        <label>Пароль</label>
+        <input type="password" placeholder="••••••••" required />
+      </div>
+      <button type="submit" class="btn btn-dark btn-full">Создать аккаунт</button>
+    </form>
+    <!-- Profile (shown when logged in) -->
+    <div id="profilePanel" style="display:none">
+      <div class="profile-welcome">Добро пожаловать, <strong id="profileName"></strong></div>
+      <div class="profile-sections">
+        <div class="profile-section">
+          <h4>История заказов</h4>
+          <div id="orderHistory"><p class="empty-state">Заказов пока нет</p></div>
+        </div>
+        <div class="profile-section">
+          <h4>Бронирования</h4>
+          <div id="bookingHistory"><p class="empty-state">Бронирований пока нет</p></div>
+        </div>
+      </div>
+      <button class="btn btn-outline-dark btn-full" id="logoutBtn">Выйти</button>
+    </div>
+  </div>
+</div>
+
+<!-- MAP & CONTACTS -->
+<section class="contact section-reveal" id="contact">
+  <div class="container">
+    <div class="section-header">
+      <h2 class="section-title">Мы ждём тебя</h2>
+    </div>
+    <div class="contact-grid">
+      <div class="contact-info">
+        <div class="contact-detail">
+          <span class="detail-label">Адрес</span>
+          <p>Москва, ул. Пятницкая, 18<br>м. Новокузнецкая</p>
+        </div>
+        <div class="contact-detail">
+          <span class="detail-label">Часы работы</span>
+          <p>Понедельник — пятница: 11:00–21:00<br>Суббота — воскресенье: 10:00–22:00</p>
+        </div>
+        <div class="contact-detail">
+          <span class="detail-label">Телефон</span>
+          <p><a href="tel:+74951234567">+7 (495) 123-45-67</a></p>
+        </div>
+        <div class="contact-social">
+          <a href="#" class="social-link" aria-label="Telegram">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.373 0 0 5.373 0 12s5.373 12 12 12 12-5.373 12-12S18.627 0 12 0zm5.894 8.221-1.97 9.28c-.145.658-.537.818-1.084.508l-3-2.21-1.447 1.394c-.16.16-.295.295-.605.295l.213-3.053 5.56-5.023c.242-.213-.054-.333-.373-.12L7.545 14.26l-2.956-.924c-.642-.204-.657-.642.136-.953l11.57-4.461c.537-.194 1.006.131.834.952l-.235-.653z"/></svg>
+            Telegram
+          </a>
+          <a href="#" class="social-link" aria-label="VK">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M12.785 16.241s.288-.032.436-.194c.136-.148.132-.427.132-.427s-.02-1.304.587-1.496c.598-.19 1.365 1.26 2.179 1.815.615.422 1.082.33 1.082.33l2.175-.03s1.137-.071.598-.964c-.044-.073-.314-.661-1.618-1.869-1.366-1.265-1.183-1.061.462-3.251.999-1.33 1.399-2.142 1.273-2.489-.12-.332-.855-.244-.855-.244l-2.447.015s-.181-.025-.315.056c-.132.079-.217.262-.217.262s-.386 1.027-.901 1.901c-1.085 1.847-1.52 1.946-1.697 1.831-.412-.267-.309-1.073-.309-1.645 0-1.789.271-2.534-.528-2.726-.265-.065-.46-.107-1.138-.114-.87-.009-1.605.003-2.021.207-.277.136-.491.439-.361.456.161.022.526.099.72.363.25.342.241 1.111.241 1.111s.144 2.105-.336 2.367c-.329.18-.781-.187-1.751-1.865-.498-.861-.875-1.814-.875-1.814s-.072-.177-.202-.272c-.157-.115-.377-.151-.377-.151l-2.325.015s-.349.01-.477.162c-.114.136-.009.417-.009.417s1.819 4.26 3.877 6.406c1.888 1.974 4.031 1.845 4.031 1.845h.972z"/></svg>
+            ВКонтакте
+          </a>
+        </div>
+      </div>
+      <div class="contact-map">
+        <div class="map-placeholder">
+          <div class="map-pin">
+            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+          </div>
+          <p>Москва, ул. Пятницкая, 18</p>
+          <a href="https://maps.yandex.ru" target="_blank" rel="noopener" class="btn btn-dark">Открыть карту</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="footer">
+  <div class="container footer-inner">
+    <div class="footer-brand">
+      <p class="footer-logo">Лунный лист</p>
+      <p class="footer-quote"><em>«Завари себе немного времени.»</em></p>
+      <div class="footer-social">
+        <a href="#" aria-label="Telegram" class="footer-social-link">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.373 0 0 5.373 0 12s5.373 12 12 12 12-5.373 12-12S18.627 0 12 0zm5.894 8.221-1.97 9.28c-.145.658-.537.818-1.084.508l-3-2.21-1.447 1.394c-.16.16-.295.295-.605.295l.213-3.053 5.56-5.023c.242-.213-.054-.333-.373-.12L7.545 14.26l-2.956-.924c-.642-.204-.657-.642.136-.953l11.57-4.461c.537-.194 1.006.131.834.952l-.235-.653z"/></svg>
+        </a>
+        <a href="#" aria-label="VK" class="footer-social-link">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12.785 16.241s.288-.032.436-.194c.136-.148.132-.427.132-.427s-.02-1.304.587-1.496c.598-.19 1.365 1.26 2.179 1.815.615.422 1.082.33 1.082.33l2.175-.03s1.137-.071.598-.964c-.044-.073-.314-.661-1.618-1.869-1.366-1.265-1.183-1.061.462-3.251.999-1.33 1.399-2.142 1.273-2.489-.12-.332-.855-.244-.855-.244l-2.447.015s-.181-.025-.315.056c-.132.079-.217.262-.217.262s-.386 1.027-.901 1.901c-1.085 1.847-1.52 1.946-1.697 1.831-.412-.267-.309-1.073-.309-1.645 0-1.789.271-2.534-.528-2.726-.265-.065-.46-.107-1.138-.114-.87-.009-1.605.003-2.021.207-.277.136-.491.439-.361.456.161.022.526.099.72.363.25.342.241 1.111.241 1.111s.144 2.105-.336 2.367c-.329.18-.781-.187-1.751-1.865-.498-.861-.875-1.814-.875-1.814s-.072-.177-.202-.272c-.157-.115-.377-.151-.377-.151l-2.325.015s-.349.01-.477.162c-.114.136-.009.417-.009.417s1.819 4.26 3.877 6.406c1.888 1.974 4.031 1.845 4.031 1.845h.972z"/></svg>
+        </a>
+      </div>
+    </div>
+    <nav class="footer-nav">
+      <a href="#teas">Чаи</a>
+      <a href="#ceremonies">Церемонии</a>
+      <a href="#mobile">Выездные церемонии</a>
+      <a href="#blog">Блог</a>
+      <a href="#about">О нас</a>
+      <a href="#contact">Контакты</a>
+    </nav>
+  </div>
+  <div class="footer-bottom">
+    <p>© 2024 Лунный лист. Все права защищены.</p>
+  </div>
+</footer>
+
+<!-- CART ANIMATION PARTICLE -->
+<div class="cart-particle" id="cartParticle"></div>
+
+<script src="script.js"></script>
+</body>
+</html>
